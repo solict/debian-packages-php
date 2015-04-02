@@ -1,0 +1,13 @@
+Package: php-apc
+Source: php-apcu
+Version: 4.0.7-1
+Architecture: all
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Installed-Size: 30
+Depends: php5-apcu
+Section: oldlibs
+Priority: extra
+Homepage: http://pecl.php.net/package/APCu
+Description: APC User Cache for PHP 5 (transitional package)
+ This is a dummy transition package that can be safely removed once no
+ package depend on it.

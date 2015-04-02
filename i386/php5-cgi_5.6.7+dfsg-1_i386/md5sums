@@ -1,0 +1,7 @@
+e2cc22e9d8c2e62fbbf0c42c9937e8ac  usr/bin/php5-cgi
+24b148664ec2a51430b2a59d04aa2f77  usr/lib/cgi-bin/php5
+6ca595a320107e1109c4aee99cc18a0e  usr/share/bug/php5-cgi/control
+92f64806e4639a900dd4c98a7bb4fead  usr/share/bug/php5-cgi/script
+2a38b87b0149b56655e7f17219224ad0  usr/share/lintian/overrides/php5-cgi
+f12957f73a4d01d684c69bea0298eed1  usr/share/man/man1/php5-cgi.1.gz
+d41d8cd98f00b204e9800998ecf8427e  usr/share/php5/sapi/cgi

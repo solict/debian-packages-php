@@ -1,0 +1,6 @@
+5623f85d11cb968e1b0d1a8f6d4553b5  usr/lib/php5/20131226/pdo_sqlite.so
+1c66270123183dfd516c1e8b4e98f712  usr/lib/php5/20131226/sqlite3.so
+3ec131911c95e8b0d20bcc7e085dad70  usr/share/bug/php5-sqlite/control
+bb06ea8bb649cb4449a665f2922cfefe  usr/share/bug/php5-sqlite/script
+296243da028c011bf7a40fe565b08d56  usr/share/php5/sqlite/pdo_sqlite.ini
+1d73904e1491105dbdfe04163ccfd04a  usr/share/php5/sqlite/sqlite3.ini

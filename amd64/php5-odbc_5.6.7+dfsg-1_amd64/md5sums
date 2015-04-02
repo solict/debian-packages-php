@@ -1,0 +1,6 @@
+553b63d65d4d5afdd3a0047c68bca1f0  usr/lib/php5/20131226/odbc.so
+2acfdee1e0bd90a2a03e797d9a99d116  usr/lib/php5/20131226/pdo_odbc.so
+3ec131911c95e8b0d20bcc7e085dad70  usr/share/bug/php5-odbc/control
+54af86f14ee6a512beb40a59b7ef0296  usr/share/bug/php5-odbc/script
+31d25eff4070bac2614bffc63b303a53  usr/share/php5/odbc/odbc.ini
+47dee28df346a9e0d70219d741417099  usr/share/php5/odbc/pdo_odbc.ini

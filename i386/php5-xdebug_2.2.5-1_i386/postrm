@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/xdebug.ini /etc/php5/mods-available/xdebug.ini 2.2.0-1~ -- "$@"
+# End automatically added section
+# Automatically added by dh_php5
+if [ "$1" = "purge" ] ; then
+    if [ -e /usr/share/php5/php5-maintscript-helper ] ; then
+	. /usr/share/php5/php5-maintscript-helper
+
+	for conf in xdebug  ; do
+	    php5_invoke dismod ALL $conf || exit $?
+	done
+    else
+	if [ -x /usr/sbin/php5dismod ]; then 
+	    for conf in xdebug  ; do
+	        php5dismod $conf
+	    done
+	else
+	    echo "WARN: php5-common has been removed, you need to cleanup /etc/php5 yourself."
+	fi
+    fi
+fi
+# End automatically added section

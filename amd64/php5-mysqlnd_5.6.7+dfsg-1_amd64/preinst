@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/10-mysqlnd.ini /etc/php5/mods-available/mysqlnd.ini 5.4.0~rc6-1 -- "$@";
+
+for dsoname in mysqlnd mysql mysqli pdo_mysql ; do
+    inifile=${dsoname}.ini
+    dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/${inifile} /etc/php5/mods-available/${inifile} 5.4.0~rc6-1 -- "$@";
+done
+
+
+
+exit 0

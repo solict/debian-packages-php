@@ -1,0 +1,6 @@
+f3ab27501626ea8a34163f7b80a96da4  usr/lib/php5/20131226/pdo_pgsql.so
+85ae655814258683126facba889346d7  usr/lib/php5/20131226/pgsql.so
+3ec131911c95e8b0d20bcc7e085dad70  usr/share/bug/php5-pgsql/control
+fa7d99f1820207f2aaa66b0321f3bd61  usr/share/bug/php5-pgsql/script
+37e7019f79d6846fb8e92a5b864395d5  usr/share/php5/pgsql/pdo_pgsql.ini
+1f6761664793d86cd33e38148393c3c2  usr/share/php5/pgsql/pgsql.ini

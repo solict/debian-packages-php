@@ -1,0 +1,18 @@
+Package: php5-sasl
+Source: php-sasl (0.1.0-3)
+Version: 0.1.0-3+b1
+Architecture: i386
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Installed-Size: 31
+Depends: phpapi-20131226, libc6 (>= 2.4), libsasl2-2
+Section: php
+Priority: optional
+Homepage: http://pecl.php.net/package/sasl
+Description: Cyrus SASL Extension
+ SASL is the Simple Authentication and Security Layer (as defined by RFC
+ 2222).  It provides a system for adding plugable authenticating support to
+ connection-based protocols.  The SASL Extension for PHP makes the Cyrus
+ SASL library functions available to PHP. It aims to provide a 1-to-1
+ wrapper around the SASL library to provide the greatest amount of
+ implementation flexibility.  To that end, it is possible to build both a
+ client-side and server-side SASL implementation entirely in PHP.

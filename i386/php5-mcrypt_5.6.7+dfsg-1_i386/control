@@ -1,0 +1,16 @@
+Package: php5-mcrypt
+Source: php5
+Version: 5.6.7+dfsg-1
+Architecture: i386
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 54
+Depends: libc6 (>= 2.4), libltdl7 (>= 2.4.2), libmcrypt4, phpapi-20131226, php5-common (= 5.6.7+dfsg-1), ucf
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: MCrypt module for php5
+ This package provides a module for MCrypt functions in PHP scripts.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

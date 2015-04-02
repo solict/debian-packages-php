@@ -1,0 +1,21 @@
+Package: php5-common
+Source: php5
+Version: 5.6.7+dfsg-1
+Architecture: i386
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 1070
+Depends: libc6 (>= 2.4), sed (>= 4.1.1-1), psmisc (>= 22.15-1~), lsof, ucf
+Suggests: php5-user-cache
+Conflicts: php5-mhash
+Breaks: php-apc (<< 4.0.0), php-crypt-gpg (<< 1.3.2), php5-json (<< 1.3.1-1~), php5-suhosin (<< 0.9.34), php5-xcache (<< 3.1~), php5-xdebug (<< 2.2.2)
+Provides: php5-mhash, phpapi-20131226
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: Common files for packages built from the php5 source
+ This package contains the documentation and example files relevant to all
+ the other packages built from the php5 source.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

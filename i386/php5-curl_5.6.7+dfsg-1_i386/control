@@ -1,0 +1,16 @@
+Package: php5-curl
+Source: php5
+Version: 5.6.7+dfsg-1
+Architecture: i386
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 95
+Depends: libc6 (>= 2.4), libcurl3 (>= 7.18.0), phpapi-20131226, php5-common (= 5.6.7+dfsg-1), ucf
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: CURL module for php5
+ CURL is a library for getting files from  FTP, GOPHER, HTTP server.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

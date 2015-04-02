@@ -1,0 +1,19 @@
+Package: php5-dev
+Source: php5
+Version: 5.6.7+dfsg-1
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 3439
+Depends: autoconf (>= 2.63), automake (>= 1.11), libssl-dev, libpcre3-dev, libtool (>= 2.2), shtool, php5-common (>= 5.6.7+dfsg-1)
+Recommends: pkg-php-tools, dh-php5
+Conflicts: libtool (<< 2.2)
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: Files for PHP5 module development
+ This package provides the files from the PHP5 source needed for compiling
+ additional modules.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

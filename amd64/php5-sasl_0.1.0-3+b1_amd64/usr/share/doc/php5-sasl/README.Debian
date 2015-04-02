@@ -1,0 +1,92 @@
+php-sasl for Debian
+--------------------------
+
+This extension is particularly useful in conjunction with Apache mod_auth_kerb.
+mod_auth_kerb can proxy Kerberos credentials to the server with SPNEGO HTTP
+authentication.  This SASL PHP extension can then use these credentials to
+authenticate to servers with GSSAPI, without requiring the user to re-enter
+their password.
+
+A patch is available for SquirrelMail to use this SASL PHP extension to
+authenticate to IMAP and SMTP servers with GSSAPI, instead of with the user's
+plaintext username and password:
+http://cgi.sfu.ca/~jdbates/tmp/squirrelmail/200601050/patch
+
+This single sign on authentication has advantages for users, since they need
+only enter their password once: when they login to a workstation.  It also has
+security advantages, since SquirrelMail authenticates to IMAP and SMTP servers
+with the identity of the user sending or receiving mail, without ever knowing
+the user's password.
+
+The following is a simple example of using this extension as a client to
+authenticate to a server.  See /usr/share/doc/cyrus-sasl2-doc/programming.html
+for more information:
+
+/* Check for the SASL extension */
+if (!extension_loaded('sasl')) {
+	exit;
+}
+
+/* Initialize the client (done once) */
+if (!sasl_client_init()) {
+	exit;
+}
+
+/*
+ * Get server's FQDN by resolving the hostname to address, then resolving the
+ * address to FQDN.  gethostname still returns an address when called on an
+ * address, so it still works if the server address is not a hostname.
+ */
+$fqdn = gethostbyaddr(gethostbyname($hostname));
+
+/* Make new SASL connection (done for each network connection) */
+if (!$conn = sasl_client_new($service, $fqdn)) {
+	exit;
+}
+
+/*
+ * Get the list of SASL mechanisms supported by the server.  This is usually
+ * done with a capability command.  Format the list as a string separated by
+ * spaces.  Feed this string into SASL to begin the authentication process.
+ */
+$mechlist = implode(' ', $capability['AUTH']);
+
+/* Get the mechanism the client will use and the initial SASL request */
+if (!sasl_client_start($conn, $mechlist, &$out, &$mechusing)) {
+	exit;
+}
+
+/* Send SASL request */
+if (!fwrite($handle, $mechusing . base64_encode($out), 4096)) {
+	exit;
+}
+
+/* Get SASL response */
+if (!fread($handle, $in, 4096)) {
+	exit;
+}
+
+/*
+ * Convert the continuation data to binary format (for example, this may
+ * include base64 decoding it).  Perform another step in the authentication.
+ */
+do {
+	$result = sasl_client_step($conn, base64_decode($in), &$out);
+
+	/* Send SASL request */
+	if (!fwrite($handle, $mechusing . base64_encode($out), 4096)) {
+		exit;
+	}
+
+	/* Get SASL response */
+	if (!fread($handle, $in, 4096)) {
+		exit;
+	}
+} while ($result == SASL_CONTINUE);
+
+/* Check that authentication succeeded */
+if ($result != SASL_OK) {
+	exit;
+}
+
+ -- Jack Bates <ms419@freezone.co.uk>, Thu, 29 Dec 2005 16:17:36 -0800
