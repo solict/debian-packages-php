@@ -1,4 +1,4 @@
-# debian-php5-packages
+# debian-packages-php
 The original unpacked packages available at http://packages.debian.org
 
 Each branch of the repository corresponds to a major version/branch of Debian, currently:
