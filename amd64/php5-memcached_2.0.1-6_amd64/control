@@ -1,0 +1,17 @@
+Package: php5-memcached
+Source: php-memcached
+Version: 2.0.1-6
+Architecture: amd64
+Maintainer: Sergey B Kirpichev <skirpichev@gmail.com>
+Installed-Size: 150
+Depends: libc6 (>= 2.4), libmemcached10, zlib1g (>= 1:1.1.4), phpapi-20100525, ucf
+Section: php
+Priority: optional
+Homepage: http://pecl.php.net/package/memcached
+Description: memcached extension module for PHP5, uses libmemcached
+ Memcached is a caching daemon designed especially for
+ dynamic web applications to decrease database load by
+ storing objects in memory.
+ .
+ This extension uses libmemcached library to provide
+ API for communicating with memcached servers.

@@ -1,0 +1,18 @@
+Package: php5-gd
+Source: php5
+Version: 5.4.39-0+deb7u2
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 145
+Pre-Depends: dpkg (>= 1.16.1~)
+Depends: libc6 (>= 2.4), libfreetype6 (>= 2.2.1), libgd2-xpm (>= 2.0.36~rc1~dfsg), libjpeg8 (>= 8c), libpng12-0 (>= 1.2.13-4), libx11-6, libxpm4, zlib1g (>= 1:1.1.4), phpapi-20100525, php5-common (= 5.4.39-0+deb7u2), ucf
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: GD module for php5
+ This package provides a module for handling graphics directly from PHP
+ scripts. It supports the PNG, JPEG, XPM formats as well as Freetype/ttf fonts.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

@@ -1,0 +1,26 @@
+Package: php5-fpm
+Source: php5
+Version: 5.4.39-0+deb7u2
+Architecture: i386
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 8289
+Pre-Depends: dpkg (>= 1.16.1~)
+Depends: libbz2-1.0, libc6 (>= 2.11), libcomerr2 (>= 1.01), libdb5.1, libgssapi-krb5-2 (>= 1.6.dfsg.2), libk5crypto3 (>= 1.6.dfsg.2), libkrb5-3 (>= 1.6.dfsg.2), libonig2 (>= 5.2.0), libpcre3 (>= 8.10), libqdbm14 (>= 1.8.74), libssl1.0.0 (>= 1.0.0), libxml2 (>= 2.8.0), zlib1g (>= 1:1.1.4), mime-support, php5-common (= 5.4.39-0+deb7u2), libmagic1, ucf, tzdata
+Suggests: php-pear
+Provides: phpapi-20100525+lfs
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: server-side, HTML-embedded scripting language (FPM-CGI binary)
+ This package provides the Fast Process Manager interpreter that runs
+ as a daemon and receives Fast/CGI requests.  Note that MOST Apache users
+ probably want the libapache2-mod-php5 package.
+ The following extensions are built in: bcmath bz2 calendar Core ctype date
+ dba dom ereg exif fileinfo filter ftp gettext hash iconv json libxml
+ mbstring mhash openssl pcre Phar posix Reflection session shmop SimpleXML
+ soap sockets SPL standard sysvmsg sysvsem sysvshm tokenizer wddx xml
+ xmlreader xmlwriter zip zlib.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

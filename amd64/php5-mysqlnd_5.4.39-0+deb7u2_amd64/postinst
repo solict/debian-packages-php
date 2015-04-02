@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+    ucf /usr/share/php5/mysqlnd/mysqlnd.ini /etc/php5/mods-available/mysqlnd.ini
+fi
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/10-mysqlnd.ini /etc/php5/mods-available/mysqlnd.ini 5.4.0~rc6-1 -- "$@";
+
+
+inidir=/etc/php5/mods-available
+if [ "$1" = "configure" ]; then
+    for dsoname in mysqlnd mysql mysqli pdo_mysql ; do
+	inifile=${dsoname}.ini
+	priority=$(sed -ne "s/^; priority=\([0-9]\+\)$/\\1/p" /usr/share/php5/mysqlnd/${inifile})
+
+	# Register new conffile with UCF
+	ucf /usr/share/php5/mysqlnd/${inifile} ${inidir}/${inifile}
+	ucfr --force php5-mysqlnd ${inidir}/${inifile}
+
+	# Move pre-extension manager conffile
+	dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/${inifile} ${inidir}/${inifile} 5.4.0~rc6-1 -- "$@";
+
+	if [ -f "${inidir}/${inifile}.dpkg-new" ]; then
+	    md5sum="$(md5sum ${inidir}/${inifile}.dpkg-new | sed -e 's/ .*//')"
+	    old_md5sum="$(md5sum ${inidir}/${inifile} | sed -e 's/ .*//')"
+	    if [ "$md5sum" = "$old_md5sum" ]; then
+		mv "${inidir}/${inifile}.dpkg-new" "${inidir}/${inifile}"
+	    fi
+	fi
+
+	# Enable the module
+	php5enmod ${dsoname}/${priority:-20}
+    done
+fi
+
+exit 0

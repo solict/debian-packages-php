@@ -1,0 +1,3 @@
+# This false alarm is due to GCC 4.7 -O2 optimisation (unprotected:
+# memset, memcpy), see: http://bugs.debian.org/673112
+php5-memcached: hardening-no-fortify-functions usr/lib/php*/*/memcached.so

@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/xdebug.ini \
+	/etc/php5/mods-available/xdebug.ini 2.2.0-1~ -- "$@"
+
+# Verify path in ini file is correct
+EXT_DIR=/usr/lib/php5/20100525
+if [ -n "$EXT_DIR" ]; then
+	sed -e "s@\(zend_extension=\).*\(xdebug.so\)@\1$EXT_DIR/\2@g" -i /etc/php5/mods-available/xdebug.ini
+fi
+
+case "$1" in
+    configure)
+	php5enmod xdebug
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+
+exit 0

@@ -1,0 +1,25 @@
+Package: php5-mysqlnd
+Source: php5
+Version: 5.4.39-0+deb7u2
+Architecture: amd64
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 495
+Pre-Depends: dpkg (>= 1.16.1~)
+Depends: libc6 (>= 2.4), phpapi-20100525, php5-common (= 5.4.39-0+deb7u2), ucf
+Conflicts: php5-mysql, php5-mysqli
+Replaces: php5-mysql, php5-mysqli
+Section: php
+Priority: extra
+Homepage: http://www.php.net/
+Description: MySQL module for php5 (Native Driver)
+ This package provides modules for MySQL database connections directly from
+ PHP scripts.  It includes the generic "mysql" module which can be used
+ to connect to all versions of MySQL, an improved "mysqli" module for
+ MySQL version 4.1 or later, and the pdo_mysql module for use with
+ the PHP Data Object extension.
+ .
+ This package use the MySQL Native Driver.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.

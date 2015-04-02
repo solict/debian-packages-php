@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/10-mysqlnd.ini /etc/php5/mods-available/mysqlnd.ini 5.4.0~rc6-1 -- "$@";
+
+
+inidir=/etc/php5/mods-available
+for dsoname in mysqlnd mysql mysqli pdo_mysql ; do
+    inifile=${dsoname}.ini
+
+    dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/${inifile} ${inidir}/${inifile} 5.4.0~rc6-1 -- "$@";
+
+    # Query which package has this conffile registered
+    if which ucfq >/dev/null; then
+	ucfp=$(ucfq -w ${inidir}/${inifile} | cut -f 2 -d:)
+    fi
+
+    # Only work with the config file if it still belongs to us
+    if test "$ucfp" = php5-mysqlnd; then
+	if [ "$1" = "purge" ]; then
+	    for ext in '~' '%' .bak .ucf-new .ucf-old .ucf-dist;  do
+		rm -f ${inidir}/${inifile}${ext}
+	    done
+	    rm -f ${inidir}/${inifile}
+	    if which ucf >/dev/null; then
+		ucf --purge ${inidir}/${inifile}
+	    fi
+	    if which ucfr >/dev/null; then
+		ucfr --purge php5-mysqlnd ${inidir}/${inifile}
+	    fi
+	fi
+    fi
+done
+
+exit 0

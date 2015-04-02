@@ -1,0 +1,6 @@
+a0ab83f982226c5652c1ff4ae44f8a6d  usr/lib/php5/20100525+lfs/memcached.so
+6c6f0e1acb0d69171f0e7a4f3e42643a  usr/share/doc/php5-memcached/README.markdown
+3a54e620b8720bb15e27a6037ce4a051  usr/share/doc/php5-memcached/changelog.Debian.gz
+c34a4d7fb011b40ed81d3447c60ce895  usr/share/doc/php5-memcached/changelog.gz
+4cd0568e7c45a6ab9e8e91f293f2a638  usr/share/doc/php5-memcached/copyright
+64a2adde7d3a8c34bb07d513ad86fee7  usr/share/lintian/overrides/php5-memcached

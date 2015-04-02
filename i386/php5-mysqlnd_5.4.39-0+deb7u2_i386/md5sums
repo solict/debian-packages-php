@@ -1,0 +1,8 @@
+afd2e9ba7a5a7680fe4ec645d43ada3a  usr/lib/php5/20100525+lfs/mysql.so
+6124b82bbb6033f603ef0dfb91f5695c  usr/lib/php5/20100525+lfs/mysqli.so
+2b47eacfc92d0fcdba1ab017a8281153  usr/lib/php5/20100525+lfs/mysqlnd.so
+840ae9e200a241a792746a86dd431ad0  usr/lib/php5/20100525+lfs/pdo_mysql.so
+4ec7c759a1bbf616bd5fc64e46852ed0  usr/share/php5/mysqlnd/mysql.ini
+f236e54661cdcf871dd7e4baf9abbea4  usr/share/php5/mysqlnd/mysqli.ini
+e55d13552bc744b7c557640655835372  usr/share/php5/mysqlnd/mysqlnd.ini
+abfa801b4820233d1fcf18d3e15db635  usr/share/php5/mysqlnd/pdo_mysql.ini

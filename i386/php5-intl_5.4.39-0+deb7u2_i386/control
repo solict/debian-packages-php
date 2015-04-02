@@ -1,0 +1,20 @@
+Package: php5-intl
+Source: php5
+Version: 5.4.39-0+deb7u2
+Architecture: i386
+Maintainer: Debian PHP Maintainers <pkg-php-maint@lists.alioth.debian.org>
+Installed-Size: 193
+Pre-Depends: dpkg (>= 1.16.1~)
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libicu48 (>= 4.8-1), phpapi-20100525+lfs, php5-common (= 5.4.39-0+deb7u2), ucf
+Conflicts: php5-idn
+Replaces: php5-idn
+Provides: php5-idn
+Section: php
+Priority: optional
+Homepage: http://www.php.net/
+Description: internationalisation module for php5
+ This package provides a module to ease internationalisation of PHP scripts.
+ .
+ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used
+ open source general-purpose scripting language that is especially suited
+ for web development and can be embedded into HTML.
